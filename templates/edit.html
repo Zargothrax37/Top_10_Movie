@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Movies{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1 class="heading">Movie Title</h1>
+    <p class="description">Edit Movie Rating</p>
+  </div>
+<form method="POST" action="{{ url_for('edit_form') }}">
+    {{ form.csrf_token }}
+    {{ form.new_rating.label }} {{ form.new_rating(size=20) }}
+    {{ form.new_review.label }} {{ form.new_review(size=20) }}
+    {{ form.submit }}
+</form>
+{% endblock %}
